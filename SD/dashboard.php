@@ -6,6 +6,17 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="dstyle.css"/>
 </head>
+<script type="text/javascript">
+		function disableBackButton()
+		{
+		window.history.forward()
+		}  
+		disableBackButton();  
+		window.onload=disableBackButton();  
+		window.onpageshow=function(evt) { if(evt.persisted) disableBackButton() }  
+		window.onunload=function() { void(0) 
+        } 
+	</script>
 <body>
  <div class="sidebar">
     <div class="logo_content">
@@ -48,12 +59,21 @@
         <div class="profile">
             <div class="profile_details">
                 <img src="profile.png" alt="">
+                <?php 
+                include ("dbase.php");
+                $sql="Select * from user_detail where sno=1";
+                $result=mysqli_query($cn,"$sql");
+                $row=$result->fetch_assoc();
+                $name=$row['unam'];
+                $email=$row['email'];
+                ?>
                 <div class="name_job">
-                    <div class="name">User name</div>
-                    <div class="job">Web Designer</div>
+                    <div class="name"><?php echo $name ?></div>
+                    <div class="job"><?php echo $email ?></div>
                 </div>
             </div>
-            <a href="#">
+            
+            <a href="logout.php">
             <i class="bx bx-log-out" id="log_out"></i>
             </a>
         </div>
@@ -70,5 +90,6 @@
         sidebar.classList.toggle("active");
     }
  </script>
+ 
 </body>
 </html>
