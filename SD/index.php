@@ -48,7 +48,9 @@
 			</div>
 
 			<br>
+			<a href="dashboard.php">
 			<button>Login</button>
+			</a>
 		</div>
 
 	</div>
