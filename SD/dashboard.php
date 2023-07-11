@@ -6,17 +6,7 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="dstyle.css"/>
 </head>
-<script type="text/javascript">
-		function disableBackButton()
-		{
-		window.history.forward()
-		}  
-		disableBackButton();  
-		window.onload=disableBackButton();  
-		window.onpageshow=function(evt) { if(evt.persisted) disableBackButton() }  
-		window.onunload=function() { void(0) 
-        } 
-	</script>
+
 <body>
  <div class="sidebar">
     <div class="logo_content">
@@ -41,7 +31,7 @@
             <span class="tooltip">Profile</span>
         </li>
         <li>
-            <a href="#">
+            <a href="uploadfile.php">
             <i class='bx bx-upload' ></i>
                 <span class="links_name">Upload File</span>
             </a>
