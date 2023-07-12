@@ -1,15 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<!-- Coding by CodingNepal | www.codingnepalweb.com-->
+<html lang="en" dir="ltr">
 
 <head>
     <meta charset="UTF-8">
-    <title>Login Page in HTML with CSS Code Example</title>
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-
-
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <link rel="stylesheet" href="./style.css">
-
+    <title> Login </title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Fontawesome CDN Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <script type="text/javascript">
 		function disableBackButton()
@@ -19,51 +18,48 @@
 		disableBackButton();  
 		window.onload=disableBackButton();  
 		window.onpageshow=function(evt) { if(evt.persisted) disableBackButton() }  
-		window.onunload=function() { void(0) 
-        } 
+		window.onunload=function() { void(0) } 
 	</script>
 <body>
-    <!-- partial:index.partial.html -->
-    <div class="box-form">
-        <div class="left">
-            <div class="overlay">
-
+    <div class="container">
+        <input type="checkbox" id="flip">
+        <div class="cover">
+            <div class="front">
+                <img src="https://studerp.sjctni.edu/StudERP/login/assets/images/8.jpg" alt="">
+                <div class="text">
+                    <span class="text-1">St.Joseph's College</span>
+                    <span class="text-1-sub">(Autonomous)</span>
+                    <span class="text-2">Tiruchirappalli-620002.</span>
+                </div>
             </div>
         </div>
-
-
-        <div class="right">
-            <h5 style=" font-weight:bolder;color: #d30a0a ;width: 200%;  ">ST.JOSEPH'S COLLEGE (AUTONOMOUS),</h5>
-            <h5 style=" font-weight:bolder;color: #d30a0a ;width: 200%;">TIRUCHIRAPPALLI-620002.</h5>
-            <br>
-            <h5>SCHOLAR LOGIN</h5>
-            <form action="" method="post">
-                <div class="inputs">
-                    <input type="text" placeholder="user name" name="una" id="una" required>
-                    <br>
-                    <input type="password" placeholder="password" name="pwd" id="pwd" required>
-
+        <form action="" method="post">
+        <div class="forms">
+            <div class="form-content">
+                <div class="login-form">
+                    <div class="title">Scholar Login</div>
+                    <form action="#">
+                        <div class="input-boxes">
+                            <div class="input-box">
+                                <i class="fas fa-user"></i>
+                                <input type="text" placeholder="Username" name="una" id="una" required>
+                            </div>
+                            <div class="input-box">
+                                <i class="fas fa-lock"></i>
+                                <input type="password" placeholder="Password" name="pwd" id="pwd" required>
+                            </div>
+                            <br>
+                            <div class="text"><a href="#">Forgot password?</a></div>
+                            <div class="button input-box">
+                                <input type="submit" value="Login" name="sbt_lgn_btn" id="sbt_lgn_btn">
+                            </div>
+                            <br>
+                        </div>
+                    </form>
                 </div>
-
-                <br><br>
-
-                <div class="remember-me--forget-password">
-                    <!-- Angular -->
-                    <label>
-                        <input type="checkbox" name="item" checked />
-                        <span class="text-checkbox">Remember me</span>
-                    </label>
-
-                </div>
-
-                <br>
-
-                <button name="sbt_lgn_btn" id="sbt_lgn_btn">Login</button>
-
+            </div>
         </div>
-
     </div>
-    <!-- Login code -->
     <?php
     include("dbase.php");
     if (isset($_REQUEST['sbt_lgn_btn'])) {
@@ -79,8 +75,7 @@
         }
     }
     ?>
-
-    </form>
+</form>
 </body>
 
 </html>
