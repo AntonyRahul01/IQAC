@@ -250,3 +250,8 @@ body{
     width: calc(100% - 240px); 
     left: 240px;  
 }
+
+.sidebar.active ~ .content{
+    width: calc(100% - 240px); 
+    left: 240px;  
+}
