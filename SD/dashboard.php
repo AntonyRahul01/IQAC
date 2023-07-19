@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>:: Scholar Home ::</title>
+    <title>Home Dashboard</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="dstyle.css"/>
 </head>
@@ -17,14 +17,14 @@
     </div>
     <ul class="nav_list">
         <li>
-            <a href="#">
+            <a href="dashboard.php">
                 <i class="bx bx-grid-alt"></i>
                 <span class="links_name">Dashboard</span>
             </a>
             <span class="tooltip">Dashboard</span>
         </li>
         <li>
-            <a href="#">
+            <a href="profile.php">
                 <i class="bx bx-user"></i>
                 <span class="links_name">Profile</span>
             </a>
@@ -48,7 +48,7 @@
     <div class="profile_content">
         <div class="profile">
             <div class="profile_details">
-                <img src="profile.png" alt="">
+                <img src="prfimg.png" alt="">
                 <?php 
                 include ("dbase.php");
                 $sql="Select * from user_detail where sno=1";
@@ -56,9 +56,10 @@
                 $row=$result->fetch_assoc();
                 $name=$row['unam'];
                 $email=$row['email'];
+                $profilename=$row['name'];
                 ?>
                 <div class="name_job">
-                    <div class="name"><?php echo $name ?></div>
+                    <div class="name"><?php echo $profilename ?></div>
                     <div class="job"><?php echo $email ?></div>
                 </div>
             </div>

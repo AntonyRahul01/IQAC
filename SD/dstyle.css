@@ -44,6 +44,7 @@ body{
     margin-right: 5px;
 }
 .logo_content .logo .logo_name{
+    margin-left: 20px;
     font-size: 20px;
     font-weight: 400;
 }
@@ -168,7 +169,7 @@ body{
     border-radius: 12px;
 }
 .profile .profile_details .name_job{
-    margin-left: 10px;
+    margin-left: 5px;
 }
 .profile .profile_details .name{
     font-size: 15px;
@@ -212,36 +213,7 @@ body{
     color: #3A1078;
     margin: 12px;
 }
-.user_profile{
-    position: absolute;
-    height: 100%;
-    width: calc(100% - 78px); 
-    top: 78px;
-    left: 78px;
-    transition: all 0.5s ease;
-}
-.user_profile .user_profile_text{
-    padding: 1rem;
-    border-radius: 10px;
-    font-size: 25px;
-    font-weight: 500;
-    color: #3A1078;
-    margin: 12px;
-}
-.user_profile_text h4{
-    text-align: left;
-    margin-top: 30px;
-    margin-left: 20px;
-}
-.user_profile img{
-    height: 15%;
-    width: 15%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    object-fit: cover;
-    border-radius: 12px;
-}
+
 .sidebar.active ~ .user_profile{
     width: calc(100% - 240px); 
     left: 240px;  
@@ -249,4 +221,8 @@ body{
 .sidebar.active ~ .home_content{
     width: calc(100% - 240px); 
     left: 240px;  
+}
+.sidebar.active~.content {
+    width: calc(100% - 240px);
+    left: 240px;
 }
