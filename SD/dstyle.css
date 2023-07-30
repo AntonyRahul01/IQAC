@@ -77,7 +77,7 @@ body{
 .sidebar ul li .tooltip{
     position: absolute;
     left: 122px;
-    color:#3A1078;
+    color:#3B3086;
     top: 0;
     transform: translate(-50% , -50%);
     border-radius: 6px;
@@ -112,7 +112,7 @@ body{
 
 }
 .sidebar ul li a:hover{
-    color: #3A1078;
+    color: #3B3086;
     background: #fff;
 }
 .sidebar ul li i{
@@ -197,10 +197,10 @@ body{
 .sidebar.active .profile #log_out{
     background: none;   
 }
-.home_content{
+.home_content {
     position: relative;
     height: 100%;
-    width: calc(100% - 78px); 
+    width: calc(100% - 78px);
     left: 78px;
     transition: all 0.5s ease;
 }
@@ -214,22 +214,10 @@ body{
     margin: 12px;
 }
 
-.sidebar.active ~ .user_profile{
-    width: calc(100% - 240px); 
-    left: 240px;  
-}
-.sidebar.active ~ .home_content{
-    width: calc(100% - 240px); 
-    left: 240px;  
-}
-.sidebar.active~.content {
-    width: calc(100% - 240px);
-    left: 240px;
-}
+.sidebar.active ~ .user_profile,
+.sidebar.active ~ .home_content,
+.sidebar.active~.content,
 .sidebar.active~.profilecard {
-    overflow: auto;
     width: calc(100% - 240px);
     left: 240px;
 }
-
-

@@ -38,7 +38,7 @@
     <div class="profilecard">
         <div class="wrapper">
             <div class="left">
-                <img src="https://i.imgur.com/cMy8V5j.png" alt="user" width="100">
+                <img src="https://makepassportphoto.com/passport_photo.jpeg" alt="user">
                 <h4><?php echo $profilename ?></h4>
                 <p>Ph D Scholar</p>
             </div>

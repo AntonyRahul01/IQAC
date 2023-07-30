@@ -12,7 +12,7 @@
   border-radius: 10px;
   font-size: 25px;
   font-weight: 500;
-  color: #3A1078;
+  color: #3B3086;
   margin: 12px;
 }
 
@@ -29,7 +29,7 @@
   position: relative;
   font-size: 26pt;
   font-weight: 600;
-  color:#3A1078 ;
+  color:#3B3086;
 }
 
 .container form{
@@ -63,7 +63,7 @@ form.secActive .form.first{
   font-size: 16pt;
   font-weight: 500;
   margin: 6px 0;
-  color: #3A1078;
+  color: #3B3086;
 }
 .container form .fields{
   display: flex;
@@ -80,7 +80,7 @@ form .fields .input-field{
 .input-field label{
   font-size: 12pt;
   font-weight: bold;
-  color: #3A1078;
+  color: #3B3086;
 }
 .input-field input, select{
   outline: none;
