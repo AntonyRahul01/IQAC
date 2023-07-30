@@ -1,13 +1,13 @@
 <?php
 session_start();
-if ($_SESSION['s_id'] && $_SESSION['position'] == 'stud') {
+if ($_SESSION['s_id'] && $_SESSION['position'] == 'hod') {
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>SCHOLAR HOME</title>
+    <title>HOD HOME</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="dstyle.css"/>
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
@@ -31,14 +31,14 @@ if ($_SESSION['s_id'] && $_SESSION['position'] == 'stud') {
             <span class="tooltip">Dashboard</span>
         </li>
         <li>
-            <a href="profile.php">
+            <a href="#">
                 <i class="bx bx-user"></i>
                 <span class="links_name">Profile</span>
             </a>
             <span class="tooltip">Profile</span>
         </li>
         <li>
-            <a href="uploadfile.php">
+            <a href="#">
             <i class='bx bx-upload' ></i>
                 <span class="links_name">Upload File</span>
             </a>
@@ -57,7 +57,7 @@ if ($_SESSION['s_id'] && $_SESSION['position'] == 'stud') {
             <div class="profile_details">
                 <?php 
                 include ("../database/dbase.php");
-                $sql="Select * from staff_detail where s_id ";
+                $sql="Select * from staff_detail where s_id";
                 $result=mysqli_query($cn,"$sql");
                 $row=$result->fetch_assoc();
                 $name=$row['unam'];
@@ -77,7 +77,7 @@ if ($_SESSION['s_id'] && $_SESSION['position'] == 'stud') {
     </div>
  </div>
  <div class="home_content">
-    <div class="text"><h4>Scholar Dashboard</h4></div>
+    <div class="text"><h4>HOD Dashboard</h4></div>
  </div>
  <script>
     let btn =document.querySelector("#btn");

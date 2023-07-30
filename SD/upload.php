@@ -1,4 +1,4 @@
-<?php include "dbase.php";
+<?php include "../database/dbase.php";
 $name = $_POST['name'];
 $guidename = $_POST['guidename'];
 $journalname = $_POST['journalname'];

@@ -3,23 +3,15 @@
 <html lang="en" dir="ltr">
 
 <head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Login </title>
     <link rel="stylesheet" href="style.css">
     <!-- Fontawesome CDN Link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<script type="text/javascript">
-		function disableBackButton()
-		{
-		window.history.forward()
-		}  
-		disableBackButton();  
-		window.onload=disableBackButton();  
-		window.onpageshow=function(evt) { if(evt.persisted) disableBackButton() }  
-		window.onunload=function() { void(0) } 
-	</script>
 <body>
     <div class="container">
         <input type="checkbox" id="flip">
@@ -33,25 +25,25 @@
                 </div>
             </div>
         </div>
-        <form action="" method="post">
         <div class="forms">
             <div class="form-content">
                 <div class="login-form">
-                    <div class="title">Scholar Login</div>
-                    <form action="#">
+                    <div class="title">Login</div>
+                    <form class="form" action="insert.php" method="POST">
                         <div class="input-boxes">
                             <div class="input-box">
                                 <i class="fas fa-user"></i>
-                                <input type="text" placeholder="Username" name="una" id="una" required>
+                                <input type="text" placeholder="Username" name="username" id="username" required>
                             </div>
                             <div class="input-box">
-                                <i class="fas fa-lock"></i>
-                                <input type="password" placeholder="Password" name="pwd" id="pwd" required>
+                            <i class="fas fa-lock"></i>
+                                    <input type="password" placeholder="Password" name="password" id="password" required>
+                                    <span class="toggle-password" onclick="togglePasswordVisibility()"><i class="fas fa-eye"></i></span>
                             </div>
                             <br>
                             <div class="text"><a href="#">Forgot password?</a></div>
                             <div class="button input-box">
-                                <input type="submit" value="Login" name="sbt_lgn_btn" id="sbt_lgn_btn">
+                                <input type="submit" value="Login" name="submit" id="submit">
                             </div>
                             <br>
                         </div>
@@ -60,21 +52,23 @@
             </div>
         </div>
     </div>
-    <?php
-    include("dbase.php");
-    if (isset($_REQUEST['sbt_lgn_btn'])) {
-        $una = addslashes($_REQUEST['una']);
-        $pwd = addslashes($_REQUEST['pwd']);
+    <script>
+        function togglePasswordVisibility() {
+            var passwordInput = document.getElementById('password');
+            var eyeIcon = document.querySelector('.toggle-password i');
 
-        $sql = mysqli_query($cn, "select * from user_detail where unam='" . $una . "'and upas='" . $pwd . "'");
-        if ($dr = mysqli_fetch_array($sql)) {
-            setcookie("login_user", $una, time() + (86400 * 30), "/");
-            header('Location: dashboard.php');
-        } else {
-            echo "<script type=text/javascript> alert('You are not authorised user!'); window.location.assign('index.php');</script>";
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                eyeIcon.classList.remove('fa-eye');
+                eyeIcon.classList.add('fa-eye-slash');
+            } else {
+                passwordInput.type = 'password';
+                eyeIcon.classList.remove('fa-eye-slash');
+                eyeIcon.classList.add('fa-eye');
+            }
         }
-    }
-    ?>
+    </script>
+
 </form>
 </body>
 

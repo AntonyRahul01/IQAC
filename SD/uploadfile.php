@@ -16,7 +16,6 @@
 
 <body>
   <?php include "dashboard.php"; ?>
-  <br><br><br><br>
   <div class="content">
     <div class="content_1">
       <div class="container">

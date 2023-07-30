@@ -1,66 +1,125 @@
-.content {
-    position: absolute;
+.profilecard {
+    position: relative;
     height: 100%;
     width: calc(100% - 78px);
     left: 78px;
     transition: all 0.5s ease;
 }
 
-.content .content_1 {
+.profilecard .wrapper {
     background: #ebe9e9;
     padding: 1rem;
     border-radius: 10px;
-    font-size: 25px;
-    color: #3A1078;
+    color: #3B3086;
     margin: 12px;
 }
 
-
-.profile {
+.wrapper {
+    justify-content: center;
     display: flex;
-    justify-content: center; 
-    margin-top: 20px;
 }
 
-.avatar img {
-    width: 100%;
-    max-width: 200px;
-    height: 200px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 50%;
-}
-
-h1 {
-    margin-top: 20px;
+.wrapper .left {
+    width: 30%;
+    background: #3B3086;
+    padding: 100px 75px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
     text-align: center;
+    color: #fff;
+}
+
+.wrapper .left img {
+    height: 200px;
+    width: 170px;
+    border-radius: 5px;
     margin-bottom: 10px;
 }
 
-p {
-    margin-top: 0px;
-    text-align: center;
+.wrapper .left h4 {
+    margin-bottom: 10px;
+    font-size: 24pt;
+}
+
+.wrapper .left p {
+    font-size: 20px;
+}
+
+.wrapper .right {
+    width: 65%;
+    background: #fff;
+    padding: 30px 25px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.wrapper .right .info,
+.wrapper .right .projects {
+    margin-bottom: 25px;
+}
+
+.wrapper .right .info h3,
+.wrapper .right .projects h3 {
+    font-size: 20pt;
     margin-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #e0e0e0;
+    color: #3B3086;
+    text-transform: uppercase;
+    letter-spacing: 5px;
 }
 
-#customers {
-    border-collapse: collapse;
-    width: 100%;
-  }
-  #customers td {
-    border: 2px solid #3A1078;
-    padding: 8px;
-  }
-  #customers tr:nth-child(even){background-color: #fff;}
-
-  #customers tr:hover {
-    cursor: pointer;
-    background-color: #ddd;
+.wrapper .right .info_data,
+.wrapper .right .projects_data {
+    display: flex;
+    justify-content: space-between;
 }
-#customers td {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    text-align: left;
-    font-size: 14pt;
-  }
+
+.wrapper .right .projects_data a {
+    transition: all 0.3s ease;
+    color: blue;
+}
+
+.wrapper .right .projects_data a:hover {
+    text-decoration: none;
+    color: #000;
+}
+
+.wrapper .right .info_data .data,
+.wrapper .right .projects_data .data {
+    width: 45%;
+}
+
+.wrapper .right .info_data .data h4,
+.wrapper .right .projects_data .data h4 {
+    color: #3B3086;
+    font-size: 16pt;
+    margin-bottom: 5px;
+}
+
+.wrapper .right .info_data .data p,
+.wrapper .right .projects_data .data p {
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: black;
+}
+
+.wrapper .social_media ul {
+    display: flex;
+}
+
+.wrapper .social_media ul li {
+    width: 45px;
+    height: 45px;
+    background: linear-gradient(to right, #01a9ac, #01dbdf);
+    margin-right: 10px;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 45px;
+}
+
+.wrapper .social_media ul li a {
+    color: #fff;
+    display: block;
+    font-size: 18px;
+}
