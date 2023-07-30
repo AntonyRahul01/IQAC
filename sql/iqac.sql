@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jul 05, 2023 at 12:48 PM
+-- Generation Time: Jul 19, 2023 at 04:56 PM
 -- Server version: 8.0.31
 -- PHP Version: 8.0.26
 
@@ -20,6 +20,33 @@ SET time_zone = "+00:00";
 --
 -- Database: `iqac`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `journal_details`
+--
+
+DROP TABLE IF EXISTS `journal_details`;
+CREATE TABLE IF NOT EXISTS `journal_details` (
+  `Name` varchar(50) NOT NULL,
+  `GuideName` varchar(50) NOT NULL,
+  `JournalName` varchar(50) NOT NULL,
+  `HIndex` int NOT NULL,
+  `JournalType` varchar(100) NOT NULL,
+  `PaperTitle` varchar(50) NOT NULL,
+  `ImpactFactor` varchar(50) NOT NULL,
+  `IssueDate` date NOT NULL,
+  `Authors` varchar(50) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `journal_details`
+--
+
+INSERT INTO `journal_details` (`Name`, `GuideName`, `JournalName`, `HIndex`, `JournalType`, `PaperTitle`, `ImpactFactor`, `IssueDate`, `Authors`) VALUES
+('annan leo', '', '', 0, '', '', '', '0000-00-00', ''),
+('LEO DANIEL A', 'REEBA', 'Accounts', 1, 'Scopus', 'ijhui', 'Good', '2023-07-21', 'John,Ragul');
 
 -- --------------------------------------------------------
 
