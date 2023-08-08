@@ -5,7 +5,7 @@ if (isset($_POST['submit'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
     $st = mysqli_query($cn, "select * from login where s_id='$username' and password='$password' ");
-
+    $st1 = mysqli_query($cn,"select * from staff_detail where s_id='$username'");
     if ($st->num_rows == 1) {
         $rows = mysqli_fetch_assoc($st);
         $position = $rows['position'];
@@ -13,7 +13,7 @@ if (isset($_POST['submit'])) {
         if ($position == 'stud') {
             $_SESSION['s_id'] = $username;
             $_SESSION['position'] = $position;
-            header("location:..\SD\dashboard.php");
+            header("location:..\SD\index.php");
         } elseif ($position == 'hod') {
             $_SESSION['s_id'] = $username;
             $_SESSION['position'] = $position;

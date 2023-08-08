@@ -123,3 +123,28 @@
     display: block;
     font-size: 18px;
 }
+
+/* Mobile-specific styles */
+@media (max-width: 750px) {
+    .wrapper {
+        flex-direction: column; /* Stack the .left and .right sections on top of each other on small screens */
+    }
+
+    .wrapper .left,
+    .wrapper .right {
+        width: 100%; /* Take up the full width on small screens */
+        border-radius: 0; /* Remove border radius on small screens */
+    }
+
+    .wrapper .left {
+        padding: 50px 20px; /* Reduce padding on small screens */
+    }
+
+    .wrapper .left img {
+        height: auto; /* Allow the image to scale proportionally on small screens */
+        width: 100%; /* Make the image take up the full width on small screens */
+        max-height: 250px; /* Limit the image height on small screens */
+        margin-bottom: 20px;
+    }
+}
+

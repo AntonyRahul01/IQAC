@@ -1,7 +1,3 @@
-<?php
-session_start();
-if ($_SESSION['s_id'] && $_SESSION['position'] == 'stud') {
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -24,7 +20,7 @@ if ($_SESSION['s_id'] && $_SESSION['position'] == 'stud') {
     </div>
     <ul class="nav_list">
         <li>
-            <a href="dashboard.php">
+            <a href="index.php">
                 <i class="bx bx-grid-alt"></i>
                 <span class="links_name">Dashboard</span>
             </a>
@@ -60,7 +56,6 @@ if ($_SESSION['s_id'] && $_SESSION['position'] == 'stud') {
                 $sql="Select * from staff_detail where s_id ";
                 $result=mysqli_query($cn,"$sql");
                 $row=$result->fetch_assoc();
-                $name=$row['unam'];
                 $email=$row['email'];
                 $profilename=$row['name'];
                 ?>
@@ -90,8 +85,3 @@ if ($_SESSION['s_id'] && $_SESSION['position'] == 'stud') {
  
 </body>
 </html>
-<?php
-} else {
-    header("location:../Login/index.php");
-}
-?>
