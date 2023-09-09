@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jul 30, 2023 at 03:59 PM
+-- Generation Time: Aug 08, 2023 at 04:00 PM
 -- Server version: 8.0.31
 -- PHP Version: 8.0.26
 
@@ -58,7 +58,7 @@ DROP TABLE IF EXISTS `login`;
 CREATE TABLE IF NOT EXISTS `login` (
   `s_id` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT 'username',
   `password` varchar(100) NOT NULL COMMENT 'password',
-  `position` varchar(100) NOT NULL COMMENT 'position',
+  `position` varchar(100) NOT NULL,
   PRIMARY KEY (`s_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
@@ -69,7 +69,9 @@ CREATE TABLE IF NOT EXISTS `login` (
 INSERT INTO `login` (`s_id`, `password`, `position`) VALUES
 ('22pca109', '1234', 'stud'),
 ('22pca123', '1234', 'hod'),
-('22pca130', '1234', 'iqac');
+('22pca130', '1234', 'iqac'),
+('22pca102', '1234', 'stud'),
+('22pen101', '1234', 'stud');
 
 -- --------------------------------------------------------
 
@@ -80,44 +82,21 @@ INSERT INTO `login` (`s_id`, `password`, `position`) VALUES
 DROP TABLE IF EXISTS `staff_detail`;
 CREATE TABLE IF NOT EXISTS `staff_detail` (
   `s_id` varchar(100) NOT NULL,
-  `unam` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
   `name` varchar(100) NOT NULL,
   `guidename` varchar(100) NOT NULL,
   `quali` varchar(100) NOT NULL,
-  `npaper` int NOT NULL,
-  UNIQUE KEY `s_id` (`s_id`)
+  `npaper` varchar(100) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `staff_detail`
 --
 
-INSERT INTO `staff_detail` (`s_id`, `unam`, `email`, `name`, `guidename`, `quali`, `npaper`) VALUES
-('22pca109', 'rahul', 'antony@gmail.com', 'AntonyRahul', 'Charles', 'BCA., MCA', 5);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `user_detail`
---
-
-DROP TABLE IF EXISTS `user_detail`;
-CREATE TABLE IF NOT EXISTS `user_detail` (
-  `sno` int NOT NULL AUTO_INCREMENT,
-  `unam` varchar(100) NOT NULL,
-  `upas` varchar(100) NOT NULL,
-  `email` varchar(100) NOT NULL,
-  `name` varchar(100) NOT NULL,
-  PRIMARY KEY (`sno`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
---
--- Dumping data for table `user_detail`
---
-
-INSERT INTO `user_detail` (`sno`, `unam`, `upas`, `email`, `name`) VALUES
-(1, 'john', '1234', 'johnson@gmail.com', 'Johnson Selvakumar');
+INSERT INTO `staff_detail` (`s_id`, `email`, `name`, `guidename`, `quali`, `npaper`) VALUES
+('22pca109', 'antonyrahul@gmail.com', 'Antony Rahul', 'A. Charles', 'BCA', '9'),
+('22pen101', 'johnson@gmail.com', 'Johnson', 'Britto', 'Bsc.Phy., MCA', '8'),
+('22pca102', 'reeba@gmail.com', 'Jeba Reeba', 'Rravindran', 'MCA', '10');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

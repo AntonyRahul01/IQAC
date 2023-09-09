@@ -1,3 +1,7 @@
+<?php
+session_start();
+if ($_SESSION['s_id'] && $_SESSION['position'] == 'stud') {
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,12 +30,14 @@
     <?php include "dashboard.php"; ?>
     <?php
     include("../database/dbase.php");
-    $sql = "Select * from staff_detail where s_id";
+    $id = $_SESSION['s_id'];
+    $sql = "Select * from staff_detail where s_id='$id'";
     $result = mysqli_query($cn, "$sql");
     $row = $result->fetch_assoc();
     $profilename = $row['name'];
     $quali = $row['quali'];
     $email = $row['email'];
+    $s_id = $row['s_id'];
     $guidename = $row['guidename'];
     $paper = $row['npaper'];
     ?>
@@ -52,7 +58,7 @@
                         </div>
                         <div class="data">
                             <h4>Register Number</h4>
-                            <p>22PCA118</p>
+                            <p><?php echo $s_id ?></p>
                         </div>
                         <div class="data">
                             <h4>Qualification</h4>
@@ -96,3 +102,8 @@
 </body>
 
 </html>
+<?php
+} else {
+    header("location:../Login/index.php");
+}
+?>
