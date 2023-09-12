@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Aug 08, 2023 at 04:00 PM
+-- Generation Time: Sep 09, 2023 at 03:43 PM
 -- Server version: 8.0.31
 -- PHP Version: 8.0.26
 
@@ -37,16 +37,17 @@ CREATE TABLE IF NOT EXISTS `journal_details` (
   `PaperTitle` varchar(50) NOT NULL,
   `ImpactFactor` varchar(50) NOT NULL,
   `IssueDate` date NOT NULL,
-  `Authors` varchar(50) NOT NULL
+  `file` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `journal_details`
 --
 
-INSERT INTO `journal_details` (`Name`, `GuideName`, `JournalName`, `HIndex`, `JournalType`, `PaperTitle`, `ImpactFactor`, `IssueDate`, `Authors`) VALUES
-('annan leo', '', '', 0, '', '', '', '0000-00-00', ''),
-('LEO DANIEL A', 'REEBA', 'Accounts', 1, 'Scopus', 'ijhui', 'Good', '2023-07-21', 'John,Ragul');
+INSERT INTO `journal_details` (`Name`, `GuideName`, `JournalName`, `HIndex`, `JournalType`, `PaperTitle`, `ImpactFactor`, `IssueDate`, `file`) VALUES
+('Leo Daniel A', 'Reeba S', 'Trade', 2, 'Scopus', 'Swing Trade', 'Great', '2023-09-22', '../assets/REEBA.pdf'),
+('Leo Daniel A', 'Reeba S', 'Science', -2, 'Web of Science', 'Biological science', 'Great', '2023-09-14', '../assets/15...re.pdf'),
+('Leo Daniel A', 'Reeba S', 'Science', 2, 'Web of Science', 'botony', 'Great', '2023-09-14', '../assets/(U19MA050) REEBA S.pdf');
 
 -- --------------------------------------------------------
 
@@ -58,7 +59,7 @@ DROP TABLE IF EXISTS `login`;
 CREATE TABLE IF NOT EXISTS `login` (
   `s_id` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT 'username',
   `password` varchar(100) NOT NULL COMMENT 'password',
-  `position` varchar(100) NOT NULL,
+  `position` varchar(100) NOT NULL COMMENT 'position',
   PRIMARY KEY (`s_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
@@ -69,9 +70,7 @@ CREATE TABLE IF NOT EXISTS `login` (
 INSERT INTO `login` (`s_id`, `password`, `position`) VALUES
 ('22pca109', '1234', 'stud'),
 ('22pca123', '1234', 'hod'),
-('22pca130', '1234', 'iqac'),
-('22pca102', '1234', 'stud'),
-('22pen101', '1234', 'stud');
+('22pca130', '1234', 'iqac');
 
 -- --------------------------------------------------------
 
@@ -82,21 +81,44 @@ INSERT INTO `login` (`s_id`, `password`, `position`) VALUES
 DROP TABLE IF EXISTS `staff_detail`;
 CREATE TABLE IF NOT EXISTS `staff_detail` (
   `s_id` varchar(100) NOT NULL,
+  `unam` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
   `name` varchar(100) NOT NULL,
   `guidename` varchar(100) NOT NULL,
   `quali` varchar(100) NOT NULL,
-  `npaper` varchar(100) NOT NULL
+  `npaper` int NOT NULL,
+  UNIQUE KEY `s_id` (`s_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `staff_detail`
 --
 
-INSERT INTO `staff_detail` (`s_id`, `email`, `name`, `guidename`, `quali`, `npaper`) VALUES
-('22pca109', 'antonyrahul@gmail.com', 'Antony Rahul', 'A. Charles', 'BCA', '9'),
-('22pen101', 'johnson@gmail.com', 'Johnson', 'Britto', 'Bsc.Phy., MCA', '8'),
-('22pca102', 'reeba@gmail.com', 'Jeba Reeba', 'Rravindran', 'MCA', '10');
+INSERT INTO `staff_detail` (`s_id`, `unam`, `email`, `name`, `guidename`, `quali`, `npaper`) VALUES
+('22pca109', 'rahul', 'antony@gmail.com', 'AntonyRahul', 'Charles', 'BCA., MCA', 5);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_detail`
+--
+
+DROP TABLE IF EXISTS `user_detail`;
+CREATE TABLE IF NOT EXISTS `user_detail` (
+  `sno` int NOT NULL AUTO_INCREMENT,
+  `unam` varchar(100) NOT NULL,
+  `upas` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  PRIMARY KEY (`sno`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `user_detail`
+--
+
+INSERT INTO `user_detail` (`sno`, `unam`, `upas`, `email`, `name`) VALUES
+(1, 'john', '1234', 'johnson@gmail.com', 'Johnson Selvakumar');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

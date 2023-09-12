@@ -1,8 +1,11 @@
-+<?php
+<?php
 // Check if the form is submitted and the submit button is clicked
+echo "<script>alert('playing upload.php');</script>";
 if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["submit"])) {
     // Include the database connection file
     include "../database/dbase.php";
+
+    echo "<script>alert('playing if block');</script>";
 
     // Get form data
     $name = $_POST['name'];
@@ -24,7 +27,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["submit"])) {
         $sql = "INSERT INTO journal_details (Name, GuideName, JournalName, HIndex, JournalType, PaperTitle, ImpactFactor, IssueDate, file)
                 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
         $stmt = $cn->prepare($sql);
-               if ($stmt === false) {
+
+        if ($stmt === false) {
             echo 'Statement preparation failed.';
         }
 
@@ -32,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["submit"])) {
         $stmt->bind_param("sssisssss", $name, $guidename, $journalname, $hindex, $type, $title, $impactfactor, $date, $file_path);
 
         if ($stmt->execute()) {
-            echo "<script type=text/javascript> alert('Uploaded successfully!'); window.location.assign('uploadfile.php');</script>";
+            echo "Data and file uploaded successfully!";
         } else {
             echo "Insertion failed. Error: " . $stmt->error;
         }

@@ -1,7 +1,3 @@
-<?php
-session_start();
-if ($_SESSION['s_id'] && $_SESSION['position'] == 'stud') {
-?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -24,8 +20,9 @@ if ($_SESSION['s_id'] && $_SESSION['position'] == 'stud') {
     <div class="content_1">
       <div class="container">
         <header>Upload File</header>
+        <?php include "../database/dbase.php" ; ?>
 
-                <form action="upload.php" method="POST" enctype="multipart/form-data">
+        <form action="upload.php" method="POST" enctype="multipart/form-data">
 
           <div class="details personal">
 
@@ -108,8 +105,3 @@ if ($_SESSION['s_id'] && $_SESSION['position'] == 'stud') {
 </body>
 
 </html>
-<?php
-} else {
-    header("location:../Login/index.php");
-}
-?>
