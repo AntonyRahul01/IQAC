@@ -31,7 +31,7 @@ if ($_SESSION['s_id'] && $_SESSION['position'] == 'stud') {
     <?php
     include("../database/dbase.php");
     $id = $_SESSION['s_id'];
-    $sql = "Select * from staff_detail where s_id='$id'";
+    $sql = "Select * from user_details where s_id='$id'";
     $result = mysqli_query($cn, "$sql");
     $row = $result->fetch_assoc();
     $profilename = $row['name'];
@@ -40,6 +40,7 @@ if ($_SESSION['s_id'] && $_SESSION['position'] == 'stud') {
     $s_id = $row['s_id'];
     $guidename = $row['guidename'];
     $paper = $row['npaper'];
+    $file = $row['file'];
     ?>
     <div class="profilecard">
         <div class="wrapper">
@@ -80,7 +81,7 @@ if ($_SESSION['s_id'] && $_SESSION['position'] == 'stud') {
                         </div>
                         <div class="data">
                             <h4>Guide Approval Form</h4>
-                            <a href="#">View File</a>
+                            <a href="<?php echo $file; ?> "target="_blank" title="View Approval Form">View File</a>
                         </div>
                         <div class="data">
                             <h4>No. of Paper Published</h4>

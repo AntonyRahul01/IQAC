@@ -53,7 +53,7 @@
             <div class="profile_details">
                 <?php 
                 include ("../database/dbase.php");
-                $sql="Select * from staff_detail where s_id ";
+                $sql="Select * from user_details where s_id ";
                 $result=mysqli_query($cn,"$sql");
                 $row=$result->fetch_assoc();
                 $email=$row['email'];
