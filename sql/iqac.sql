@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Sep 14, 2023 at 01:13 PM
+-- Generation Time: Sep 14, 2023 at 04:08 PM
 -- Server version: 8.0.31
 -- PHP Version: 8.0.26
 
@@ -66,6 +66,28 @@ INSERT INTO `login` (`s_id`, `password`, `position`, `department`) VALUES
 ('22pca130', '1234', 'iqac', ''),
 ('22pca102', '1234', 'hod', ''),
 ('22pca118', '1234', 'stud', 'Computer Science');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `staff_detail`
+--
+
+DROP TABLE IF EXISTS `staff_detail`;
+CREATE TABLE IF NOT EXISTS `staff_detail` (
+  `s_id` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `unam` varchar(255) NOT NULL,
+  `name` varchar(255) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `staff_detail`
+--
+
+INSERT INTO `staff_detail` (`s_id`, `email`, `unam`, `name`) VALUES
+('22pca102', 'reeba@gmail.com', 'Jeba Reeba', 'Jeba Reeba'),
+('22pca130', 'selva@gmail.com', 'Selva Deeshani', 'Selva Deeshani');
 
 -- --------------------------------------------------------
 
