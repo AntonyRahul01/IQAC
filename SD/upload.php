@@ -1,11 +1,8 @@
 <?php
 // Check if the form is submitted and the submit button is clicked
-echo "<script>alert('playing upload.php');</script>";
 if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["submit"])) {
     // Include the database connection file
     include "../database/dbase.php";
-
-    echo "<script>alert('playing if block');</script>";
 
     // Get form data
     $name = $_POST['name'];
@@ -36,7 +33,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["submit"])) {
         $stmt->bind_param("sssisssss", $name, $guidename, $journalname, $hindex, $type, $title, $impactfactor, $date, $file_path);
 
         if ($stmt->execute()) {
-            echo "Data and file uploaded successfully!";
+            // Success message as a JavaScript popup
+            echo '<script>
+                    alert("Data and file uploaded successfully !");
+                    window.location.assign("uploadfile.php");
+                  </script>';
         } else {
             echo "Insertion failed. Error: " . $stmt->error;
         }
@@ -46,9 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["submit"])) {
 
     // Close the database connection
     $cn->close();
-}
-else{
-    
-    echo "<script>alert('playing else bl');</script>";
+} else {
+    echo '<script>alert("Playing else block.");</script>';
 }
 ?>

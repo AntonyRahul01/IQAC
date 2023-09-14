@@ -6,7 +6,7 @@ if ($_SESSION['s_id'] && $_SESSION['position'] == 'stud') {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>SCHOLAR HOME</title>
+    <title>Scholar Home</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="dstyle.css"/>
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">

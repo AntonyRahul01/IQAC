@@ -7,7 +7,7 @@ if ($_SESSION['s_id'] && $_SESSION['position'] == 'stud') {
 
 <head>
     <meta charset="UTF-8">
-    <title>Profile</title>
+    <title>Scholar Profile</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="profile.css" />
     <link rel="stylesheet" href="dstyle.css">
@@ -41,11 +41,12 @@ if ($_SESSION['s_id'] && $_SESSION['position'] == 'stud') {
     $guidename = $row['guidename'];
     $paper = $row['npaper'];
     $file = $row['file'];
+    $image = $row['img'];
     ?>
     <div class="profilecard">
         <div class="wrapper">
             <div class="left">
-                <img src="https://makepassportphoto.com/passport_photo.jpeg" alt="user">
+            <img src="<?php echo $image; ?>" alt="userimage"/>
                 <h4><?php echo $profilename ?></h4>
                 <p>Ph D Scholar</p>
             </div>

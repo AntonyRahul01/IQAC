@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
 .content{
-  position: absolute;
+  position: relative;
   height: 100%;
   width: calc(100% - 78px); 
   left: 78px;
@@ -30,6 +30,39 @@
   font-size: 26pt;
   font-weight: 600;
   color:#3B3086;
+}
+.container form .buttons {
+  display: flex;
+  align-items: center;
+  justify-content:space-between; /* Align buttons to the right */
+  margin-top: 30px; /* Add some top margin to separate from other fields */
+}
+
+.container form .buttons button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 45px;
+  width: 100%;
+  border: none;
+  outline: none;
+  color: #fff;
+  border-radius: 5px;
+  margin-left: 50px;
+  margin-right: 60px;
+  background-color:  #3B3086;
+  transition: all 0.3s linear;
+  cursor: pointer;
+}
+
+.container form .buttons .btnText{
+  padding: 50pt;
+  font-size: 14px;
+  font-weight:600;
+}
+.container form .buttons .button{
+  display: flex;
+  align-items: center;
 }
 
 .container form{
@@ -68,7 +101,7 @@ form.secActive .form.first{
 .container form .fields{
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content:space-around;
   flex-wrap: wrap;
 }
 form .fields .input-field{
@@ -104,31 +137,7 @@ form .fields .input-field{
 .input-field input[type="date"]:valid{
   color: #333;
 }
-.container form button{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 45px;
-  max-width: 200px;
-  width: 100%;
-  border: none;
-  outline: none;
-  color: #fff;
-  border-radius: 5px;
-  margin: 30px 0;
-  background-color: #4070f4;
-  transition: all 0.3s linear;
-  cursor: pointer;
-}
 
-.container form .btnText{
-  font-size: 14px;
-  font-weight:600;
-}
-form .buttons{
-  display: flex;
-  align-items: center;
-}
 
 
 

@@ -11,7 +11,7 @@ body{
     position: relative;
     min-height: 100vh;
     width: 100%;
-    overflow: hidden;
+    overflow: auto;
 }
 .sidebar{
     position: fixed;
@@ -217,6 +217,7 @@ body{
 .sidebar.active ~ .user_profile,
 .sidebar.active ~ .home_content,
 .sidebar.active~.content,
+.sidebar.active~.viewfile,
 .sidebar.active~.profilecard {
     width: calc(100% - 240px);
     left: 240px;

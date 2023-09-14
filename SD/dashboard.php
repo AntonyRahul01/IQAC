@@ -41,7 +41,7 @@
             <span class="tooltip">Upload File</span>
         </li>
         <li>
-            <a href="sview.php">
+            <a href="view.php">
             <i class='bx bxs-file'></i>
                 <span class="links_name">View File</span>
             </a>
