@@ -38,7 +38,7 @@ if ($_SESSION['s_id'] && $_SESSION['position'] == 'hod') {
             <span class="tooltip">Profile</span>
         </li>
         <li>
-            <a href="#">
+            <a href="hprint.php">
             <i class='bx bx-upload' ></i>
                 <span class="links_name">Upload File</span>
             </a>

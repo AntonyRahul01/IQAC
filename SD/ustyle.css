@@ -15,8 +15,10 @@
   color: #3B3086;
   margin: 12px;
 }
-
-
+.readonly
+{
+	background-color: #D7D7D7;
+}
 
 .container{
   position: relative;
