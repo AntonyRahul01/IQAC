@@ -202,7 +202,7 @@
 
   <table border="0" align="center" width="90%" class="button">
     <tr>
-      <td width="10%" align="center"><a href="#"><button type="button" class="btn btn-secondary custom-button">Back</button></a></td>
+      <td width="10%" align="center"><a href="hviewfile.php"><button type="button" class="btn btn-secondary custom-button">Back</button></a></td>
     </tr>
   </table>
 

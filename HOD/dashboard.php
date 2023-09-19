@@ -1,13 +1,9 @@
-<?php
-session_start();
-if ($_SESSION['s_id'] && $_SESSION['position'] == 'hod') {
-?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>HOD HOME</title>
+    <title>SCHOLAR HOME</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="dstyle.css"/>
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
@@ -24,7 +20,7 @@ if ($_SESSION['s_id'] && $_SESSION['position'] == 'hod') {
     </div>
     <ul class="nav_list">
         <li>
-            <a href="dashboard.php">
+            <a href="index.php">
                 <i class="bx bx-grid-alt"></i>
                 <span class="links_name">Dashboard</span>
             </a>
@@ -38,14 +34,14 @@ if ($_SESSION['s_id'] && $_SESSION['position'] == 'hod') {
             <span class="tooltip">Profile</span>
         </li>
         <li>
-            <a href="hprint.php">
+            <a href="#">
             <i class='bx bx-upload' ></i>
                 <span class="links_name">Upload File</span>
             </a>
             <span class="tooltip">Upload File</span>
         </li>
         <li>
-            <a href="#">
+            <a href="hviewfile.php">
             <i class='bx bxs-file'></i>
                 <span class="links_name">View File</span>
             </a>
@@ -57,10 +53,9 @@ if ($_SESSION['s_id'] && $_SESSION['position'] == 'hod') {
             <div class="profile_details">
                 <?php 
                 include ("../database/dbase.php");
-                $sql="Select * from staff_detail where s_id";
+                $sql="Select * from staff_detail where s_id ";
                 $result=mysqli_query($cn,"$sql");
                 $row=$result->fetch_assoc();
-                $name=$row['unam'];
                 $email=$row['email'];
                 $profilename=$row['name'];
                 ?>
@@ -77,7 +72,7 @@ if ($_SESSION['s_id'] && $_SESSION['position'] == 'hod') {
     </div>
  </div>
  <div class="home_content">
-    <div class="text"><h4>HOD Dashboard</h4></div>
+    <div class="text"><h4>Scholar Dashboard</h4></div>
  </div>
  <script>
     let btn =document.querySelector("#btn");
@@ -90,8 +85,3 @@ if ($_SESSION['s_id'] && $_SESSION['position'] == 'hod') {
  
 </body>
 </html>
-<?php
-} else {
-    header("location:../Login/index.php");
-}
-?>

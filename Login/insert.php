@@ -18,7 +18,7 @@ if (isset($_POST['submit'])) {
             $_SESSION['s_id'] = $username;
             $_SESSION['position'] = $position;
 
-            header("location:..\HOD\dashboard.php");
+            header("location:..\HOD\index.php");
         } elseif ($position == 'iqac') {
             $_SESSION['s_id'] = $username;
             $_SESSION['position'] = $position;

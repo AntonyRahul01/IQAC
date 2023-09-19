@@ -218,6 +218,7 @@ body{
 .sidebar.active ~ .home_content,
 .sidebar.active~.content,
 .sidebar.active~.viewfile,
+.sidebar.active~.hviewfile,
 .sidebar.active~.profilecard {
     width: calc(100% - 240px);
     left: 240px;
