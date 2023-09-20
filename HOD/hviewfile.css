@@ -1,77 +1,50 @@
 .hviewfile {
-    position: relative;
-    height: 100%;
-    width: calc(100% - 78px);
-    left: 78px;
-    transition: all 0.5s ease;
+  position: relative;
+  height: 500px;
+  /* Set a fixed height for the container */
+  width: calc(100% - 78px);
+  left: 78px;
+  transition: all 0.5s ease;
 }
 
 .hviewfile .text1 {
-    background: #ebe9e9;
-    padding: 1rem;
-    border-radius: 10px;
-    font-size: 25px;
-    color: #3A1078;
-    margin: 12px;
-}
-
-h1,
-p {
-    margin-top: 20px;
-    margin-bottom: 10px;
-}
-
-ul {
-    list-style-type: none;
-    padding-left: 0;
-}
-
-li {
-    margin-bottom: 5px;
+  background: #ebe9e9;
+  padding: 1rem;
+  border-radius: 10px;
+  font-weight: bold;
+  color: #3B3086;
+  margin: 12px;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
-#customers {
-    overflow: auto;
-    border-collapse: collapse;
-    width: 100%;
-  }
-  
-  #customers td, #customers th {
-    border: 1px solid #ddd;
-    padding: 8px;
-  }
-  
-  #customers tr:nth-child(even){background-color: #fff;}
-  
-  #customers tr:hover {
-    cursor: pointer;
-    background-color: #ddd;
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
 }
-  
-  #customers th {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    text-align: left;
-    font-size: 14pt;
-    background-color: #3A1078;
-    color: white;
-  }
 
-  #customers td {
-    text-align: center;
-    padding-top: 12px;
-    padding-bottom: 12px;
-    text-align: left;
-    font-size: 12pt;
-  }
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
 
-  #custom {
-    width: 300px; /* Set the desired width */
-    height: 200px; /* Set the desired height */
-    overflow: auto; /* Enable scrollbars when content overflows */
-    border: 1px solid #ccc; /* Optional: add a border for visualization */
-  }
+th {
+  font-size: 14pt;
+  background-color: #3B3086;
+  text-align: center;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #fff;
+}
+
+tr:hover {
+  cursor: pointer;
+  background-color: #ddd;
+}

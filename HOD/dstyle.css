@@ -11,7 +11,7 @@ body{
     position: relative;
     min-height: 100vh;
     width: 100%;
-    overflow: hidden;
+    overflow: auto;
 }
 .sidebar{
     position: fixed;
@@ -197,10 +197,10 @@ body{
 .sidebar.active .profile #log_out{
     background: none;   
 }
-.home_content{
+.home_content {
     position: relative;
     height: 100%;
-    width: calc(100% - 78px); 
+    width: calc(100% - 78px);
     left: 78px;
     transition: all 0.5s ease;
 }
@@ -214,22 +214,12 @@ body{
     margin: 12px;
 }
 
-.sidebar.active ~ .user_profile{
-    width: calc(100% - 240px); 
-    left: 240px;  
-}
-.sidebar.active ~ .home_content{
-    width: calc(100% - 240px); 
-    left: 240px;  
-}
-.sidebar.active~.content {
-    width: calc(100% - 240px);
-    left: 240px;
-}
+.sidebar.active ~ .user_profile,
+.sidebar.active ~ .home_content,
+.sidebar.active~.content,
+.sidebar.active~.viewfile,
+.sidebar.active~.hviewfile,
 .sidebar.active~.profilecard {
-    overflow: auto;
     width: calc(100% - 240px);
     left: 240px;
 }
-
-

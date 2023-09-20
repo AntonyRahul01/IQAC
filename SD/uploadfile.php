@@ -28,7 +28,24 @@ if ($_SESSION['s_id'] && $_SESSION['position'] == 'stud') {
     $row = $result->fetch_assoc();
     $profilename = $row['name'];
     $guidename = $row['guidename'];
+
     ?>
+    <?php
+    // Generate a unique 4-digit application number
+    function generateApplicationNumber($prefix = 'App id')
+    {
+      $random = str_pad(mt_rand(1, 9999), 4, '0', STR_PAD_LEFT); // Generate a 4-digit random number
+
+      // Combine the prefix and random number
+      $applicationNumber = $prefix . '-' . $random;
+
+      return $applicationNumber;
+    }
+    // Usage
+    $applicationNumber = generateApplicationNumber();
+    ?>
+
+
     <div class="content">
       <div class="content_1">
         <div class="container">
@@ -38,7 +55,7 @@ if ($_SESSION['s_id'] && $_SESSION['position'] == 'stud') {
           <form action="upload.php" method="POST" enctype="multipart/form-data">
 
             <div class="details personal">
-
+              <label><?php echo "$applicationNumber" ?></label><br><br>
               <div class="fields">
                 <div class="input-field">
                   <label>Full Name</label>
@@ -94,6 +111,11 @@ if ($_SESSION['s_id'] && $_SESSION['position'] == 'stud') {
                   <button class="clear" type="button" onclick="clearForm()">
                     <span class="btnText">Clear&nbsp;</span>
                   </button>
+
+                  <input type="text" name="dno" id="dno" value="<?php echo $_SESSION['s_id'] ?>" hidden>
+                  <!-- Inside your form -->
+                  <input type="text" name="appid" id="appid" value="<?php echo $applicationNumber ?>" hidden>
+
 
                   <button type="submit" name="submit" class="submit" onclick="displaySuccessMessage(); return false;">
                     <span class="btnText">Submit</span>

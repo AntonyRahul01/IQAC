@@ -14,6 +14,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["submit"])) {
     $impactfactor = $_POST['impactfactor'];
     $date = $_POST['date'];
 
+    $applicationNumber = $_POST['appid']; // If the form uses POST method
+    $dno = $_POST['dno'];
+
     // File upload handling
     $target_directory = "../assets/";
     $file_name = $_FILES['file']['name'];
@@ -21,8 +24,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["submit"])) {
 
     if (move_uploaded_file($_FILES['file']['tmp_name'], $file_path)) {
         // File uploaded successfully, now insert data into the database
-        $sql = "INSERT INTO journal_details (Name, GuideName, JournalName, HIndex, JournalType, PaperTitle, ImpactFactor, IssueDate, file)
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        $sql = "INSERT INTO journal_details (appid, dno, Name, GuideName, JournalName, HIndex, JournalType, PaperTitle, ImpactFactor, IssueDate, file)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         $stmt = $cn->prepare($sql);
 
         if ($stmt === false) {
@@ -30,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["submit"])) {
         }
 
         // Bind parameters and execute the query
-        $stmt->bind_param("sssisssss", $name, $guidename, $journalname, $hindex, $type, $title, $impactfactor, $date, $file_path);
+        $stmt->bind_param("sssssisssss",$applicationNumber, $dno, $name, $guidename, $journalname, $hindex, $type, $title, $impactfactor, $date, $file_path);
 
         if ($stmt->execute()) {
             // Success message as a JavaScript popup

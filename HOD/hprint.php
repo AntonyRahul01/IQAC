@@ -1,3 +1,7 @@
+<?php
+session_start();
+if ($_SESSION['s_id'] && $_SESSION['position'] == 'hod') {
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 
@@ -11,6 +15,13 @@
 </head>
 
 <body>
+<?php
+    include("../database/dbase.php");
+    $sql = "Select * from journal_details";
+    $result = mysqli_query($cn, "$sql");
+    while($row = $result->fetch_assoc()){
+    $profilename = $row['Name'];
+    ?>
   <table border="0" width="90%" align="center" class="date">
     <tr>
       <td width="20%" align="right">
@@ -67,7 +78,7 @@
         <p class="la">Name</p>
       </td>
       <td width="35%" align="left">
-        <p>Rahul</p>
+        <p><?php echo $profilename ?></p>
       </td>
     </tr>
     <tr>
@@ -214,3 +225,9 @@
 </body>
 
 </html>
+<?php
+    }
+} else {
+    header("location:../Login/index.php");
+}
+?>
