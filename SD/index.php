@@ -15,6 +15,7 @@ if ($_SESSION['s_id'] && $_SESSION['position'] == 'stud') {
 
 <body>
 <?php include "dashboard.php"; ?>
+
  <script>
     let btn =document.querySelector("#btn");
     let sidebar =document.querySelector(".sidebar");

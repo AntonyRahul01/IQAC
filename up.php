@@ -3,7 +3,7 @@
 
 <body>
     <form action="#" method="post" enctype="multipart/form-data">
-        <input type="text" placeholder="s_id" name="s_id" id="s_id" /><br>
+        <input type="text" placeholder="s_id" name="s_id" id="s_id" oninput="this.value = this.value.toUpperCase()"/><br>
         <input type="email" placeholder="Email" name="email" id="email" /><br>
         <input type="text" placeholder="Name" name="name" id="name" /><br>
         <input type="text" placeholder="Guide Name" name="guidename" id="guidename" /><br>

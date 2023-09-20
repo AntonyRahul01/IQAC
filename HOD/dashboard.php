@@ -27,41 +27,26 @@
             <span class="tooltip">Dashboard</span>
         </li>
         <li>
-            <a href="#">
-                <i class="bx bx-user"></i>
-                <span class="links_name">Profile</span>
-            </a>
-            <span class="tooltip">Profile</span>
-        </li>
-        <li>
-            <a href="#">
-            <i class='bx bx-upload' ></i>
-                <span class="links_name">Upload File</span>
-            </a>
-            <span class="tooltip">Upload File</span>
-        </li>
-        <li>
             <a href="hviewfile.php">
-            <i class='bx bxs-file'></i>
+            <i class='bx bx-list-ul'></i>
                 <span class="links_name">View File</span>
             </a>
             <span class="tooltip">View File</span>
+        </li>
+        
+        <li>
+            <a href="#">
+            <i class='bx bxs-file'></i>
+                <span class="links_name">Report</span>
+            </a>
+            <span class="tooltip">Report</span>
         </li>
     </ul>
     <div class="profile_content">
         <div class="profile">
             <div class="profile_details">
-                <?php 
-                include ("../database/dbase.php");
-                $sql="Select * from staff_detail where s_id ";
-                $result=mysqli_query($cn,"$sql");
-                $row=$result->fetch_assoc();
-                $email=$row['email'];
-                $profilename=$row['name'];
-                ?>
                 <div class="name_job">
-                    <div class="name"><?php echo $profilename ?></div>
-                    <div class="job"><?php echo $email ?></div>
+                    <a href="../Login/logout.php"><div class="name">Logout</div></a>
                 </div>
             </div>
             

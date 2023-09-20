@@ -1,15 +1,15 @@
 <?php
 session_start();
-if ($_SESSION['s_id'] && $_SESSION['position'] == 'hod') {
+if ($_SESSION['s_id'] && $_SESSION['position'] == 'stud') {
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-  <title>Paper Publication Details</title>
+  <title>Paper Publication Report</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <link href="hprint.css" rel="stylesheet" type="text/css">
+  <link href="sprint.css" rel="stylesheet" type="text/css">
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
   <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 </head>
@@ -17,13 +17,31 @@ if ($_SESSION['s_id'] && $_SESSION['position'] == 'hod') {
 <body>
 <?php
     include("../database/dbase.php");
-    $sql = "Select * from journal_details";
+    $id = $_SESSION['s_id'];
+    $sql = "Select * from user_details where s_id='$id'";
     $result = mysqli_query($cn, "$sql");
     $row = $result->fetch_assoc();
     $regno = $row['s_id'];
-    $name = $row['Name'];
-    $appid = $row['appid'];
+    $quali = $row['quali'];
+    $name = $row['name'];
+    $guidename = $row['guidename'];
+    $email = $row['email'];
     ?>
+    <?php
+    $id = $_SESSION['s_id'];
+    include("../database/dbase.php");
+    $sql = "SELECT COUNT(*) AS count FROM journal_details WHERE s_id='$id'";
+    $result = mysqli_query($cn, $sql);
+    // Check for query execution errors
+    if (!$result) {
+        die("Query failed: " . mysqli_error($cn));
+    }
+
+    // Fetch the result
+    $row = mysqli_fetch_assoc($result);
+    $count = $row['count'];
+    mysqli_close($cn);
+    ?><br>
   <table border="0" width="90%" align="center" class="date">
     <tr>
       <td width="20%" align="right">
@@ -57,17 +75,14 @@ if ($_SESSION['s_id'] && $_SESSION['position'] == 'hod') {
   <table border="1" align="center" width="90%" class="title">
     <tr>
       <td width="100%" align="center">
-        <h1>RESEARCH PAPER PUBLICAIONS DETAILS</h1>
+        <h1>RESEARCH PAPER PUBLICAIONS REPORT</h1>
       </td>
     </tr>
   </table>
   <table border="1" align="center" width="90%" class="subtitle">
     <tr>
-      <td width="80%" align="center">
+      <td width="100%" align="center">
         <p><span>Personal Detials</span></p>
-      </td>
-      <td width="20%" align="center">
-        <p><span><?php echo $appid ?></span></p>
       </td>
     </tr>
   </table>
@@ -91,13 +106,13 @@ if ($_SESSION['s_id'] && $_SESSION['position'] == 'hod') {
         <p class="la">Qualifications</p>
       </td>
       <td width="35%" align="left">
-        <p>BCA., MCA</p>
+        <p><?php echo $quali ?></p>
       </td>
       <td width="15%" align="center">
         <p class="la">Email</p>
       </td>
       <td width="35%" align="left">
-        <p>leodaniel@gmail.com</p>
+        <p><?php echo $email ?></p>
       </td>
     </tr>
   </table>
@@ -117,10 +132,10 @@ if ($_SESSION['s_id'] && $_SESSION['position'] == 'hod') {
         <p class="la">Guide Name</p>
       </td>
       <td width="35%" align="left">
-        <p>Dr. Ravindran</p>
+        <p><?php echo $guidename ?></p>
       </td>
       <td width="15%" align="center">
-        <p class="la">H - Index</p>
+        <p class="la">Currrent H - Index</p>
       </td>
       <td width="10%" align="center">
         <p>12</p>
@@ -129,90 +144,98 @@ if ($_SESSION['s_id'] && $_SESSION['position'] == 'hod') {
         <p class="la">Number of Publications</p>
       </td>
       <td width="10%" align="center">
-        <p>2</p>
+        <p><?php echo $count ?></p>
       </td>
     </tr>
   </table>
 
-  <!--Research Paper detials-->
 
-  <table border="1" align="center" width="90%" class="subtitle">
-    <tr>
-      <td width="100%" align="center">
-        <p><span>Research Paper Details</span></p>
-      </td>
-    </tr>
-  </table>
-  <table border="1" align="center" width="90%" class="details">
-    <tr>
-      <td width="15%" align="center">
-        <p class="la">Journal Name</p>
-      </td>
-      <td width="35%" align="left">
-        <p>Journal of Computer Science Research</p>
-      </td>
-      <td width="15%" align="center">
-        <p class="la">Journal Type</p>
-      </td>
-      <td width="35%" align="left">
-        <p>Scopus</p>
-      </td>
-    </tr>
-  </table>
-  <table border="1" align="center" width="90%" class="details">
-    <tr>
-      <td width="15%" align="center">
-        <p class="la">Title of the paper</p>
-      </td>
-      <td width="35%" align="center">
-        <p>A Novel Algorithm for Image Recognition Using Deep</p>
-      </td>
-      <td width="15%" align="center">
-        <p class="la">Impact Factor</p>
-      </td>
-      <td width="10%" align="center">
-        <p>5.7</p>
-      </td>
-      <td width="15%" align="center">
-        <p class="la">Issue Date</p>
-      </td>
-      <td width="20%" align="center">
-        <p>2023-09-06</p>
-      </td>
-    </tr>
-  </table>
   <!--PDF Detials-->
   <table border="1" align="center" width="90%" class="subtitle">
     <tr>
       <td width="100%" align="center">
-        <p><span>PDF Details</span></p>
+        <p><span>Number of Paper Published</span></p>
       </td>
     </tr>
   </table>
   <table border="1" align="center" width="90%" class="details">
     <tr>
+      <td width="10%" align="center">
+        <p class="la">S.no</p>
+      </td>
+      <td width="25%" align="center">
+        <p class="la">Jornal Name</p>
+      </td>
+      <td width="10%" align="center">
+        <p class="la">Jornal Type</p>
+      </td>
+      <td width="25%" align="center">
+        <p class="la">Title of the paper</p>
+      </td>
+      <td width="10%" align="center">
+        <p class="la">H - Index</p>
+      </td>
+      <td width="10%" align="center">
+        <p class="la">Impact Factor</p>
+      </td>
       <td width="15%" align="center">
-        <p>PDF File attached!!</p>
+        <p class="la">Issued Date</p>
       </td>
     </tr>
+    <?php
+                // Include the database connection
+                include("../database/dbase.php");
+
+                $id=$_SESSION['s_id'];
+
+                // Initialize a counter for the serial number
+                $serialNumber = 1;
+
+                // Modify this SQL query to retrieve the data you need from your database
+                $sql = "SELECT JournalName, JournalType, PaperTitle, HIndex, ImpactFactor, IssueDate FROM journal_details WHERE s_id='$id'";
+
+                // Execute the query
+                $result = mysqli_query($cn, $sql);
+                // Check for query execution errors
+                if (!$result) {
+                    die("Query failed: " . mysqli_error($cn));
+                }
+
+                // Check if there are any rows in the result set
+                if (mysqli_num_rows($result) > 0) {
+                    // Loop through the rows and display data in a table
+                    while ($row = mysqli_fetch_assoc($result)) {
+
+                        echo "<tr>";
+                        echo "<td>" . $serialNumber . "</td>";
+                        echo "<td>" . $row["JournalName"] . "</td>";
+                        echo "<td>" . $row["JournalType"] . "</td>";
+                        echo "<td>" . $row["PaperTitle"] . "</td>";
+                        echo "<td>" . $row["HIndex"] . "</td>";
+                        echo "<td>" . $row["ImpactFactor"] . "</td>";
+                        echo "<td>" . $row["IssueDate"] . "</td>";
+
+                        echo "</tr>";
+                        // Increment the serial number for the next row
+                $serialNumber++;
+                    }
+                } else {
+                    echo "<td colspan='6'>No records found</td>";
+                }
+
+                // Close the database connection
+                mysqli_close($cn);
+                ?>
   </table><br>
 
   <!-- Buttons -->
 
   <table border="0" align="center" width="30%" class="buttons">
     <tr>
-      <td width="10%" align="right"><button type="button" class="btn btn-danger custom-button">Reject</button></td>
-      <td width="10%" align="center"><button type="button" class="btn btn-success custom-button">Approve</button></td>
-      <td width="10%" align="left"><button class="btn btn-primary hidden-print custom-button" onclick="myFunction()"><span class="glyphicon glyphicon-print" aria-hidden="true"></span> Print</button></td>
-
+      <td width="50%" align="center"><a href="view.php"><button type="button" class="btn btn-secondary custom-button">Back</button></a></td>
+      <td width="50%" align="center"><button class="btn btn-primary hidden-print custom-button" onclick="myFunction()"><span class="glyphicon glyphicon-print" aria-hidden="true"></span> Print</button></td>
     </tr>
   </table><br>
-
-  <table border="0" align="center" width="90%" class="button">
-    <tr>
-      <td width="10%" align="center"><a href="hviewfile.php"><button type="button" class="btn btn-secondary custom-button">Back</button></a></td>
-    </tr>
-  </table>
 
   <script>
     function myFunction() {

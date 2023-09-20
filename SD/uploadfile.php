@@ -112,7 +112,7 @@ if ($_SESSION['s_id'] && $_SESSION['position'] == 'stud') {
                     <span class="btnText">Clear&nbsp;</span>
                   </button>
 
-                  <input type="text" name="dno" id="dno" value="<?php echo $_SESSION['s_id'] ?>" hidden>
+                  <input type="text" name="s_id" id="s_id" value="<?php echo $_SESSION['s_id'] ?>" hidden>
                   <!-- Inside your form -->
                   <input type="text" name="appid" id="appid" value="<?php echo $applicationNumber ?>" hidden>
 

@@ -42,26 +42,24 @@
         </li>
         <li>
             <a href="view.php">
-            <i class='bx bxs-file'></i>
+            <i class='bx bx-list-ul'></i>
                 <span class="links_name">View File</span>
             </a>
             <span class="tooltip">View File</span>
+        </li>
+        <li>
+            <a href="sprint.php">
+            <i class='bx bxs-file'></i>
+                <span class="links_name">Report</span>
+            </a>
+            <span class="tooltip">Report</span>
         </li>
     </ul>
     <div class="profile_content">
         <div class="profile">
             <div class="profile_details">
-                <?php 
-                include ("../database/dbase.php");
-                $sql="Select * from user_details where s_id ";
-                $result=mysqli_query($cn,"$sql");
-                $row=$result->fetch_assoc();
-                $email=$row['email'];
-                $profilename=$row['name'];
-                ?>
                 <div class="name_job">
-                    <div class="name"><?php echo $profilename ?></div>
-                    <div class="job"><?php echo $email ?></div>
+                    <a href="../Login/logout.php"><div class="name">Logout</div></a>
                 </div>
             </div>
             

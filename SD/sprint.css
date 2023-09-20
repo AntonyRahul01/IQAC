@@ -40,6 +40,11 @@ table{
     font-size: 18px;
     margin: 5px;
 }
+.details tr td{
+    text-align: center;
+    font-size: 18px;
+    margin: 5px;
+}
 .details .la{
     color: #3B3086;
     font-weight:700;
@@ -47,5 +52,7 @@ table{
 .custom-button {
     width: 100px;
     padding: 5px 10px; /* Adjust the padding values as needed */
-  }
+}
+
+
   

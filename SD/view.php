@@ -1,3 +1,7 @@
+<?php
+session_start();
+if ($_SESSION['s_id'] && $_SESSION['position'] == 'stud') {
+?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -76,19 +80,26 @@
 
             <table border="1">
                 <tr>
-                    <th>Name</th>
-                    <th>Guide Name</th>
-                    <th>Journal Name</th>
-                    <th>H-Index</th>
-                    <th>Journal Type</th>
-                    <th>View PDF</th> <!-- Add a new column for viewing PDFs -->
+                    <th width="5%">S.no</th><!--7 used-->
+                    <th width="9%">Issued Date</th><!--4 - 1 = 3-->
+                    <th width="25%">Journal Name</th><!--7 + 1-->
+                    <th width="5%">JournalType</th><!--7-->
+                    <th width="25%">Title of the paper</th>
+                    <th width="9%">H - Index</th>
+                    <th width="12%">Impact Factor</th>
+                    <th width="10%">View PDF</th> <!-- Add a new column for viewing PDFs -->
                 </tr>
                 <?php
                 // Include the database connection
                 include("../database/dbase.php");
 
+                $id=$_SESSION['s_id'];
+                
+                // Initialize a counter for the serial number
+                $serialNumber = 1;
+
                 // Modify this SQL query to retrieve the data you need from your database
-                $sql = "SELECT Name, GuideName, JournalName, HIndex, JournalType, file FROM journal_details";
+                $sql = "SELECT s_id, IssueDate, JournalName, JournalType, PaperTitle, HIndex, ImpactFactor, file FROM journal_details WHERE s_id='$id'";
 
                 // Execute the query
                 $result = mysqli_query($cn, $sql);
@@ -103,16 +114,19 @@
                     while ($row = mysqli_fetch_assoc($result)) {
 
                         echo "<tr>";
-                        echo "<td>" . $row["Name"] . "</td>";
-                        echo "<td>" . $row["GuideName"] . "</td>";
+                        echo "<td>" . $serialNumber . "</td>";
+                        echo "<td>" . $row["IssueDate"] . "</td>";
                         echo "<td>" . $row["JournalName"] . "</td>";
-                        echo "<td>" . $row["HIndex"] . "</td>";
                         echo "<td>" . $row["JournalType"] . "</td>";
+                        echo "<td>" . $row["PaperTitle"] . "</td>";
+                        echo "<td>" . $row["HIndex"] . "</td>";
+                        echo "<td>" . $row["ImpactFactor"] . "</td>";
 
                         // Add a link to view the PDF file
                         echo "<td><a href='" . $row["file"] . "' target='_blank'>View PDF</a></td>";
-
                         echo "</tr>";
+
+                        $serialNumber++;
                     }
                 } else {
                     echo "<tr><td colspan='6'>No records found</td></tr>";
@@ -128,3 +142,8 @@
 </body>
 
 </html>
+<?php
+} else {
+    header("location:../Login/index.php");
+}
+?>

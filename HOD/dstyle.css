@@ -1,19 +1,22 @@
 @import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
-*{
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-weight: bold;
     font-family: 'Quicksand', sans-serif;
 }
-body{
+
+body {
     position: relative;
     min-height: 100vh;
     width: 100%;
     overflow: auto;
 }
-.sidebar{
+
+.sidebar {
     position: fixed;
     top: 0;
     left: 0;
@@ -23,10 +26,12 @@ body{
     padding: 6px 14px;
     transition: all 0.5s ease;
 }
-.sidebar.active{
+
+.sidebar.active {
     width: 240px;
 }
-.sidebar .logo_content .logo{
+
+.sidebar .logo_content .logo {
     color: #fff;
     display: flex;
     height: 50px;
@@ -36,19 +41,23 @@ body{
     pointer-events: none;
     transition: all 0.5s ease;
 }
-.sidebar.active .logo_content .logo{
+
+.sidebar.active .logo_content .logo {
     opacity: 1;
 }
-.logo_content .logo i{
+
+.logo_content .logo i {
     font-size: 28px;
     margin-right: 5px;
 }
-.logo_content .logo .logo_name{
+
+.logo_content .logo .logo_name {
     margin-left: 20px;
     font-size: 20px;
     font-weight: 400;
 }
-.sidebar #btn{
+
+.sidebar #btn {
     position: absolute;
     color: #fff;
     left: 50%;
@@ -60,13 +69,16 @@ body{
     line-height: 50px;
     transform: translateX(-50%);
 }
-.sidebar.active #btn{
+
+.sidebar.active #btn {
     left: 90%;
 }
-.sidebar ul{
+
+.sidebar ul {
     margin-top: 20px;
 }
-.sidebar ul li{
+
+.sidebar ul li {
     position: relative;
     height: 50px;
     width: 100%;
@@ -74,12 +86,13 @@ body{
     list-style: none;
     line-height: 50px;
 }
-.sidebar ul li .tooltip{
+
+.sidebar ul li .tooltip {
     position: absolute;
     left: 122px;
-    color:#3B3086;
+    color: #3B3086;
     top: 0;
-    transform: translate(-50% , -50%);
+    transform: translate(-50%, -50%);
     border-radius: 6px;
     height: 35px;
     width: 122px;
@@ -92,15 +105,18 @@ body{
     pointer-events: none;
     display: block;
 }
-.sidebar.active ul li .tooltip{
+
+.sidebar.active ul li .tooltip {
     display: none;
 }
-.sidebar ul li:hover .tooltip{
+
+.sidebar ul li:hover .tooltip {
     transition: all 0.5s ease;
     opacity: 1;
     top: 50%;
 }
-.sidebar ul li a{
+
+.sidebar ul li a {
     color: #fff;
     font-weight: bold;
     display: flex;
@@ -111,74 +127,94 @@ body{
     white-space: nowrap;
 
 }
-.sidebar ul li a:hover{
+
+.sidebar ul li a:hover {
     color: #3B3086;
     background: #fff;
 }
-.sidebar ul li i{
+
+.sidebar ul li i {
     height: 50px;
     min-width: 50px;
     border-radius: 12px;
     line-height: 50px;
     text-align: center;
 }
-.sidebar .links_name{
+
+.sidebar .links_name {
     opacity: 0;
     pointer-events: auto;
     transition: all 0.5s ease;
 }
-.sidebar.active .links_name{
+
+.sidebar.active .links_name {
     opacity: 1;
     pointer-events: none;
 }
-.sidebar .profile_content{
+
+.sidebar .profile_content {
     position: absolute;
     color: #fff;
     bottom: 0;
     left: 0;
     width: 100%;
 }
-.sidebar .profile_content .profile{
+
+.sidebar .profile_content .profile {
     position: relative;
     padding: 10px 6px;
     height: 60px;
     background: none;
     transition: all 0.3s ease;
 }
-.sidebar.active .profile_content .profile{
+
+.sidebar.active .profile_content .profile {
     background: #4E31AA;
 }
-.profile_content .profile .profile_details{
+
+.profile_content .profile .profile_details {
     display: flex;
     align-items: center;
-    opacity: 0;   
+    opacity: 0;
     pointer-events: none;
     white-space: nowrap;
 }
-.sidebar.active .profile .profile_details{
-    opacity: 1;   
+
+.sidebar.active .profile .profile_details {
+    opacity: 1;
     pointer-events: auto;
 }
-.profile a{
+
+.profile a {
     color: #fff;
 }
-.profile .profile_details img{
+
+.profile .profile_details img {
     height: 45px;
     width: 45px;
     object-fit: cover;
     border-radius: 12px;
 }
-.profile .profile_details .name_job{
-    margin-left: 5px;
+
+.profile .profile_details .name_job {
+    margin-top: 6px;
+    margin-left: 60px;
 }
-.profile .profile_details .name{
-    font-size: 15px;
-    font-weight: 400;
+
+.profile .profile_details .name_job a {
+    text-decoration: none;
 }
-.profile .profile_details .job{
+
+.profile .profile_details .name {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.profile .profile_details .job {
     font-size: 12px;
 }
-.profile #log_out{
+
+.profile #log_out {
     position: absolute;
     left: 50%;
     bottom: 5px;
@@ -188,15 +224,18 @@ body{
     font-size: 20px;
     border-radius: 12px;
     text-align: center;
-    transition: all 0.3s ease ;
-    background: #4E31AA;   
+    transition: all 0.3s ease;
+    background: #4E31AA;
 }
-.sidebar.active .profile #log_out{
+
+.sidebar.active .profile #log_out {
     left: 88%;
 }
-.sidebar.active .profile #log_out{
-    background: none;   
+
+.sidebar.active .profile #log_out {
+    background: none;
 }
+
 .home_content {
     position: relative;
     height: 100%;
@@ -204,7 +243,8 @@ body{
     left: 78px;
     transition: all 0.5s ease;
 }
-.home_content .text{
+
+.home_content .text {
     background: #ebe9e9;
     padding: 1rem;
     border-radius: 10px;
@@ -214,8 +254,8 @@ body{
     margin: 12px;
 }
 
-.sidebar.active ~ .user_profile,
-.sidebar.active ~ .home_content,
+.sidebar.active~.user_profile,
+.sidebar.active~.home_content,
 .sidebar.active~.content,
 .sidebar.active~.viewfile,
 .sidebar.active~.hviewfile,

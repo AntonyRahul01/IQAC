@@ -169,11 +169,15 @@ body{
     border-radius: 12px;
 }
 .profile .profile_details .name_job{
-    margin-left: 5px;
+    margin-top: 6px;
+    margin-left: 60px;
+}
+.profile .profile_details .name_job a{
+    text-decoration: none;
 }
 .profile .profile_details .name{
-    font-size: 15px;
-    font-weight: 400;
+    font-size: 20px;
+    font-weight: bold;
 }
 .profile .profile_details .job{
     font-size: 12px;
