@@ -72,7 +72,7 @@
     </div>
  </div>
  <div class="home_content">
-    <div class="text"><h4>Scholar Dashboard</h4></div>
+    <div class="text"><h4>HOD Dashboard</h4></div>
  </div>
  <script>
     let btn =document.querySelector("#btn");
