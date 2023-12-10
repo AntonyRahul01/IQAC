@@ -263,3 +263,8 @@ body {
     width: calc(100% - 240px);
     left: 240px;
 }
+
+.sidebar.active~.publications {
+    width: calc(25% - 100px);
+    left: 240px;
+}

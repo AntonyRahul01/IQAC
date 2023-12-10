@@ -8,6 +8,7 @@
     font-family: 'Quicksand', sans-serif;
 }
 body{
+    background: #ebe9e9;
     position: relative;
     min-height: 100vh;
     width: 100%;
@@ -209,7 +210,7 @@ body{
     transition: all 0.5s ease;
 }
 .home_content .text{
-    background: #ebe9e9;
+    background: #fff;
     padding: 1rem;
     border-radius: 10px;
     font-size: 25px;
@@ -224,6 +225,11 @@ body{
 .sidebar.active~.viewfile,
 .sidebar.active~.hviewfile,
 .sidebar.active~.profilecard {
+    width: calc(100% - 240px);
+    left: 240px;
+}
+
+.sidebar.active~.cards {
     width: calc(100% - 240px);
     left: 240px;
 }

@@ -72,14 +72,6 @@
  <div class="home_content">
     <div class="text"><h4>Scholar Dashboard</h4></div>
  </div>
- <script>
-    let btn =document.querySelector("#btn");
-    let sidebar =document.querySelector(".sidebar");
-
-    btn.onclick = function(){
-        sidebar.classList.toggle("active");
-    }
- </script>
  
 </body>
 </html>

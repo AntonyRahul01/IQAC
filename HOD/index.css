@@ -1,0 +1,31 @@
+.publications {
+    position: relative;
+    height: 100%;
+    width: calc(25% - 78px);
+    left: 78px;
+    transition: all 0.5s ease;
+}
+
+
+.publications .wrapper {
+    background: #3B3086;
+    padding: 1rem;
+    border-radius: 10px;
+    color: white;
+    margin: 12px;
+}
+
+.wrapper p {
+    margin: 15px;
+    font-size: 20pt;
+}
+
+.wrapper span {
+    font-size: 36px;
+    /* Adjust the font size as needed */
+    font-weight: bolder;
+    margin-left: 30px;
+    /* Add space between "Number of Publications" and the number */
+    color: white;
+
+}

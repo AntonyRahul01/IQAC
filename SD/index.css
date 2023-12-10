@@ -1,0 +1,90 @@
+/*New code peo*/
+.cards {
+    position: relative;
+    width: calc(100% - 78px);
+    left: 78px;
+    transition: all 0.5s ease;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2rem;
+    margin-top: 1rem;
+}
+
+.cal-card-single,
+.card-single {
+    margin-left: 14px;
+    margin-right: 14px;
+    display: flex;
+    justify-content: space-evenly;
+    background: #fff;
+    color: #3B3086;
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+.card-single div:first-child span a {
+    color: var(--text-grey);
+    text-decoration: none;
+}
+
+.card-single div:last-child span {
+    font-size: 3rem;
+    color: var(--main-color);
+}
+
+.card-single:hover {
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: all 0.5s ease;
+    background: #3B3086;
+    color: #fff;
+}
+
+.card-single:hover div:first-child span,
+.card-single:hover div:last-child span {
+    color: #fff;
+    transition: all 0.5s ease;
+
+}
+
+/*Buttons*/
+.buttons .calculate,
+.buttons .update {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 35px;
+    width: 100px; /* Adjust the width as needed */
+    border: none;
+    outline: none;
+    color: #fff;
+    border-radius: 5px;
+    margin: 8px 0; /* Adjust margin as needed */
+    background-color: #3B3086;
+    transition: all 0.3s linear;
+    cursor: pointer;
+}
+
+.buttons .btnText {
+    padding: 5px; /* Adjust padding as needed */
+    font-size: 14px;
+}
+
+.buttons .button {
+    display: flex;
+    align-items: center;
+}
+
+/*Input field*/
+.input-field input{
+    outline: none;
+    font-size: 14px;
+    font-weight: 400;
+    color: #333;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+    padding: 0 15px;
+    height: 28px;
+    margin: 8px 0;
+  }
+  

@@ -37,6 +37,7 @@ if ($_SESSION['s_id'] && $_SESSION['position'] == 'hod') {
                 <table id="customers">
                     <tr>
                         <th>D.No</th>
+                        <th>App ID</th>
                         <th>Name</th>
                         <th>Title of the paper</th>
                         <th>View pdf</th>
